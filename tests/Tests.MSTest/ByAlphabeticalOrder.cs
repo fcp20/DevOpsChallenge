@@ -9,12 +9,14 @@ namespace MSTest.Project
         public static bool Test2Called;
         public static bool Test3Called;
 
+        // MSTest will be executed in the order that they appear in the class file
+        
         [TestMethod]
         public void Test2()
         {
             Test2Called = true;
 
-            Assert.IsTrue(Test1Called);
+            Assert.IsFalse(Test1Called);
             Assert.IsFalse(Test3Called);
         }
 
@@ -23,7 +25,7 @@ namespace MSTest.Project
         {
             Test1Called = true;
 
-            Assert.IsFalse(Test2Called);
+            Assert.IsTrue(Test2Called);
             Assert.IsFalse(Test3Called);
         }
 
