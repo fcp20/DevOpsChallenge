@@ -9,7 +9,8 @@ namespace NUnit.Project
         public static bool Test2BCalled;
         public static bool Test3Called;
 
-        [Test, Order(5)]
+        [Test]
+        [Order(5)]
         public void Test1()
         {
             Test3Called = true;
@@ -19,7 +20,8 @@ namespace NUnit.Project
             Assert.IsTrue(Test2BCalled);
         }
 
-        [Test, Order(0)]
+        [Test]
+        [Order(0)]
         public void Test2B()
         {
             Test2BCalled = true;
@@ -39,7 +41,8 @@ namespace NUnit.Project
             Assert.IsTrue(Test3Called);
         }
 
-        [Test, Order(-5)]
+        [Test]
+        [Order(-5)]
         public void Test3()
         {
             Test1Called = true;

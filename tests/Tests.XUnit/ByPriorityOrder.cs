@@ -11,7 +11,8 @@ namespace XUnit.Project
         public static bool Test2BCalled;
         public static bool Test3Called;
 
-        [Fact, TestPriority(5)]
+        [Fact]
+        [TestPriority(5)]
         public void Test3()
         {
             Test3Called = true;
@@ -21,7 +22,8 @@ namespace XUnit.Project
             Assert.True(Test2BCalled);
         }
 
-        [Fact, TestPriority(0)]
+        [Fact]
+        [TestPriority(0)]
         public void Test2B()
         {
             Test2BCalled = true;
@@ -41,7 +43,8 @@ namespace XUnit.Project
             Assert.False(Test3Called);
         }
 
-        [Fact, TestPriority(-5)]
+        [Fact]
+        [TestPriority(-5)]
         public void Test1()
         {
             Test1Called = true;

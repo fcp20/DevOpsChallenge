@@ -14,9 +14,9 @@ namespace XUnit.Project
         [Fact]
         public static void Test()
         {
-            Assert.True(TestsInCollection2.Collection2Run);     // Abc
-            Assert.True(TestsInCollection3.Collection3Run);     // Mno
-            Assert.False(TestsInCollection1.Collection1Run);    // Xyz
+            Assert.True(TestsInCollection2.Collection2Run); // Abc
+            Assert.True(TestsInCollection3.Collection3Run); // Mno
+            Assert.False(Collection1Run); // Xyz
 
             Collection1Run = true;
         }
@@ -30,9 +30,9 @@ namespace XUnit.Project
         [Fact]
         public static void Test()
         {
-            Assert.False(TestsInCollection2.Collection2Run);    // Abc
-            Assert.False(TestsInCollection3.Collection3Run);    // Mno
-            Assert.False(TestsInCollection1.Collection1Run);    // Xyz
+            Assert.False(Collection2Run); // Abc
+            Assert.False(TestsInCollection3.Collection3Run); // Mno
+            Assert.False(TestsInCollection1.Collection1Run); // Xyz
 
             Collection2Run = true;
         }
@@ -46,9 +46,9 @@ namespace XUnit.Project
         [Fact]
         public static void Test()
         {
-            Assert.True(TestsInCollection2.Collection2Run);     // Abc
-            Assert.False(TestsInCollection3.Collection3Run);    // Mno
-            Assert.False(TestsInCollection1.Collection1Run);    // Xyz
+            Assert.True(TestsInCollection2.Collection2Run); // Abc
+            Assert.False(Collection3Run); // Mno
+            Assert.False(TestsInCollection1.Collection1Run); // Xyz
 
             Collection3Run = true;
         }
