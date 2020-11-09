@@ -2,7 +2,7 @@
 
 namespace XUnit.Project
 {
-    // You should provide the 
+    // Should be provided the correct ordererAssemblyName
     [TestCaseOrderer("XUnit.Project.Orderers.AlphabeticalOrderer", "Tests.xUnit")]
     public class ByAlphabeticalOrder
     {
