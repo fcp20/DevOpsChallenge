@@ -26,3 +26,12 @@ steps:
     command: 'test'
     projects: 'tests/**/*.csproj'
     arguments: '--no-restore'
+
+- task: Docker@2
+  inputs:
+    displayName: docker
+    containerRegistry: 'docker'
+    repository: 'nibo-devops-challenge'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+    addPipelineData: false
