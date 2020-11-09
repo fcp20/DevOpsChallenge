@@ -1,5 +1,12 @@
 trigger:
 - master
+- staging
+
+variables:
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    imageTag: $(Build.BuildNumber)
+  ${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
+    imageTag: $(Build.BuildNumber)-staging
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -35,5 +42,5 @@ steps:
     repository: 'fcp20/nibo-devops-challenge'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: '$(Build.BuildNumber)'
+    tags: '$(imageTag)'
     addPipelineData: false
