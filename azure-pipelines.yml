@@ -5,7 +5,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-
+- checkout: self
+  displayName: checkout
 - task: DotNetCoreCLI@2
   displayName: restore
   inputs:
@@ -28,10 +29,10 @@ steps:
     arguments: '--no-restore'
 
 - task: Docker@2
+  displayName: docker
   inputs:
-    displayName: docker
     containerRegistry: 'docker'
-    repository: 'nibo-devops-challenge'
+    repository: 'fcp20/nibo-devops-challenge'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     addPipelineData: false
