@@ -35,4 +35,5 @@ steps:
     repository: 'fcp20/nibo-devops-challenge'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: '$(Build.BuildNumber)'
     addPipelineData: false
