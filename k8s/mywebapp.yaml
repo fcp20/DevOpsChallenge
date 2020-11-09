@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: mywebapp
-          image: fcp20/nibo-devops-challenge:20201109.7
+          image: fcp20/nibo-devops-challenge:latest
           resources:
             limits:
               memory: "128Mi"
